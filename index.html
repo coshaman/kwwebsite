@@ -7,6 +7,35 @@
         var audio = new Audio();
         audio.src = "music_1.mp3";
     </script>
+    <style>
+        *{margin:0;padding:0;}
+  ul,li{list-style:none;}
+  #slide{height:420px;position:relative;overflow:hidden;}
+  #slide ul{width:400%;height:100%;transition:1s;}
+  #slide ul:after{content:"";display:block;clear:both;}
+  #slide li{float:left;width:25%;height:100%;}
+  #slide li:nth-child(1){background:#680;}
+  #slide li:nth-child(2){background:#ffa;}
+  #slide li:nth-child(3){background:skyblue;}
+  #slide li:nth-child(4){background:#aaf;}
+  #slide input{display:none;}
+  #slide label{display:inline-block;vertical-align:middle;width:10px;height:10px;border:2px solid #666;background:#fff;transition:0.3s;border-radius:50%;cursor:pointer;}
+  #slide .pos{text-align:center;position:absolute;bottom:10px;left:0;width:100%;text-align:center;}
+  #pos1:checked~ul{margin-left:0%;}
+  #pos2:checked~ul{margin-left:-100%;}
+  #pos3:checked~ul{margin-left:-200%;}
+  #pos4:checked~ul{margin-left:-300%;}
+  #pos1:checked~.pos>label:nth-child(1){background:#666;}
+  #pos2:checked~.pos>label:nth-child(2){background:#666;}
+  #pos3:checked~.pos>label:nth-child(3){background:#666;}
+  #pos4:checked~.pos>label:nth-child(4){background:#666;}
+    </style>
+    <style type="text/css">
+        table{
+            height: 100px;
+            margin: auto;
+            text-align: center;
+        }
     <meta http-equiv="Content-Type" Content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <style type="text/css">
@@ -73,8 +102,8 @@
         #skip {background : skyblue; font-size : 16px; color: skyblue}
         #wrap {text-align: center; font-size: 30px; color: #fff;}
         #header {height: 240px; line-height: 20px; background: skyblue;}
-        #banner {height: 450px; line-height: 50px; background: #9FF781;}
-        #contents {height: 950px; line-height: 950px; background: #81BEF7;} 
+        #banner {height: 500px; line-height: 50px; background: #9FF781;}
+        #contents {height: 950px; line-height: 50px; background: #81BEF7;} 
         #footer {height: 220px; line-height: 220px; background: #d6ebfd;}
         .container {width: 1100px; height: inherit; margin: 0 auto; background: rgba(0,0,0,0.1);}
     </style>
@@ -105,26 +134,81 @@
         </div>
         <div id="banner">
             <div class="container">
-               <div class="banner">
-                   <h2><strong><span style="color: green;" style="display: block;" class="pulse_animated">배너</span></strong></h2>
-                    <a href = "https://www.youtube.com/channel/UCQgR3dMSZyKR_8bdBrV6kVA?view_as=subscriber" title="유튜브로 배우는 코딩! 코샤먼 바로가기" target = "_blank" class="hov-anim-box" ><img src="anigif.gif" alt="" class="animated" width="250" height="200" alt = "유튜브로 배우는 코딩! 코샤먼"></a>
-                    <a href = "https://coshaman.github.io/coshaman1/5.html" title="전국민 독서 권장 프로젝트 북소동" target = "_blank" class="hov-anim-box" ><img src="anigif.gif" alt="" class="animated" width="250" height="200" alt = "전국민 독서 권장 프로젝트 북소동"></a>
+               <div class="ban">
+                   <h2><strong><span style="color: green;">배너</span></strong></h2>
+                   <div id="slide">
+                      <input type="radio" name="pos" id="pos1" checked>
+                      <input type="radio" name="pos" id="pos2">
+                      <input type="radio" name="pos" id="pos3">
+                      <input type="radio" name="pos" id="pos4">
+                      <ul>
+                        <li>
+	                    <table border="0">
+	                    <tr><!-- 첫번째 줄 시작 -->
+	                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><br><a href = "index.html" title="Key of the World, KW" target = "_blank" class="hov-anim-box" ><img src="logo.png" alt="" class="animated" width="250" height="250" alt = "Key of the World, KW"></a></td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td><font size="6em">Key of the World, KW! 세상을 여는 열쇠 (주)KW에서 여러분의 꿈을 응원합니다.</font></td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            </tr><!-- 첫번째 줄 끝 --></table>
+                       </li>
+                        <li><table border="0">
+	                    <tr><!-- 첫번째 줄 시작 -->
+	                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><br><a href = "https://www.youtube.com/channel/UCQgR3dMSZyKR_8bdBrV6kVA?view_as=subscriber" title="유튜브로 배우는 코딩! 코샤먼 바로가기" target = "_blank" class="hov-anim-box" ><img src="%EC%BD%94%EC%83%A4%EB%A7%A8%20%EB%A9%94%EC%9D%B8.jpg" alt="" class="animated" width="250" height="200" alt = "유튜브로 배우는 코딩! 코샤먼"></a></td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td><font size="5.5em" color = "black">유튜브 코샤먼은 '코딩하는 샤람이 먼저다'라는 뜻으로, 과학/수학/물리학 등을 코딩과 융합하여 설명하고, 코딩 교구/하드웨어/코딩 박람회 등의 리뷰를 다룹니다. 코샤먼과 함께라면 코딩의 기본기를 다질 수 있습니다. 후원 및 문의는 kmcha72@gmail.com으로 하실 수 있습니다.</font></td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            </tr><!-- 첫번째 줄 끝 --></table></li>
+                        <li>
+                            <table border = "0">
+                                <tr><!-- 두번째 줄 시작 --><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                    <td><br><font size="5.5em">독서권장 프로젝트 북소동은 다양한 책에 대한 리뷰, 추천과 함께 국내 최초로 예비 작가 분들의 글들을 업로드하며 독자와 작가의 커뮤니케이션을 증진하고 있습니다.</font></td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                    <td><a href = "https://coshaman.github.io/coshaman1/5.html" title="전국민 독서 권장 프로젝트 북소동" target = "_blank" class="hov-anim-box" ><img src="%EA%B7%B8%EB%A6%BC01.png" alt="" class="animated" width="400" height="100" alt = "전국민 독서 권장 프로젝트 북소동"></a></td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                </tr><!-- 두번째 줄 끝 -->
+                        </table>
+                        </li>
+                        <li><table><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><br><br>이 홈페이지와 배너는 준비 중 상태에 있습니다. ;) 여러분의 관심과 참여를 부탁해요! 문의 : kmcha72@gmail.com / 혹은 화면 우측 하단의 초록색 버튼을 눌러 연락하실 수 있습니다.</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></table></li>
+                      </ul>
+                      <p class="pos">
+                        <label for="pos1"></label>
+                        <label for="pos2"></label>
+                        <label for="pos3"></label>
+                        <label for="pos4"></label>
+                      </p>
+                   </div>
+                        <!--
+                   <p style="text-align:left;">
+                       <a href = "https://www.youtube.com/channel/UCQgR3dMSZyKR_8bdBrV6kVA?view_as=subscriber" title="유튜브로 배우는 코딩! 코샤먼 바로가기" target = "_blank" class="hov-anim-box" ><img src="anigif.gif" alt="" class="animated" width="250" height="200" alt = "유튜브로 배우는 코딩! 코샤먼"></a>&nbsp;&nbsp;&nbsp;</p>
+                       유튜브 코샤먼은 '코딩하는 샤람이 먼저다'라는 뜻으로, 
+                       과학/수학/물리학 등의 다양한 개념과 코딩을 융합하여 설명하고, 코딩 교구/하드웨어/코딩 박람회 등의 리뷰를 다룹니다. 코샤먼과 함께라면 코딩의 기본기를 다질 수 있습니다. 후원 및 문의는 kmcha72@gmail.com으로 하실 수 있습니다.
+                    <br><p style="text-align:left;">
+                   <a href = "https://coshaman.github.io/coshaman1/5.html" title="전국민 독서 권장 프로젝트 북소동" target = "_blank" class="hov-anim-box" ><img src="%EA%B7%B8%EB%A6%BC01.png" alt="" class="animated" width="400" height="100" alt = "전국민 독서 권장 프로젝트 북소동"></a></p>-->
 
                </div>
             </div>
         </div>
         <div id="contents">
-            <!--<div class="container">
-                <svg class="loader"viewBox="0 0 340 340">
-                      <circle cx="170" cy="170" r="20" stroke="#E2007C"/>
-                     <circle cx="170" cy="170" r="15" stroke="#404041"/>
-                     <circle cx="170" cy="170" r="10" stroke="#E2007C"/>
-                     <circle cx="170" cy="170" r="5" stroke="#404041"/>
-                   </svg>
-            </div>-->
+           <h2><strong><span style="color: dodgerblue;">콘텐츠</span></strong></h2>
+            <table border="0">
+	                    <tr><!-- 첫번째 줄 시작 -->
+	                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><a href = "https://www.youtube.com/channel/UCQgR3dMSZyKR_8bdBrV6kVA?view_as=subscriber" title="유튜브로 배우는 코딩! 코샤먼 바로가기" target = "_blank" class="hov-anim-box" ><img src="anigif.gif" alt="" class="animated" width="250" height="200" alt = "유튜브로 배우는 코딩! 코샤먼"></a></td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td><font size="5.5em">유튜브 코샤먼은 '코딩하는 샤람이 먼저다'라는 뜻으로, 과학/수학/물리학 등을 코딩과 융합하여 설명하고, 코딩 교구/하드웨어/코딩 박람회 등의 리뷰를 다룹니다. 코샤먼과 함께라면 코딩의 기본기를 다질 수 있습니다. 후원 및 문의는 kmcha72@gmail.com으로 하실 수 있습니다.</font></td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+	                    </tr><!-- 첫번째 줄 끝 -->
+	                    <tr>
+	                        <td><br></td>
+	                    </tr>
+            </table>
+            <table border = "0">
+	                    <tr><!-- 두번째 줄 시작 --><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+	                        <td><font size="5.5em">독서권장 프로젝트 북소동은 다양한 책에 대한 리뷰, 추천과 함께 국내 최초로 예비 작가 분들의 글들을 업로드하며 독자와 작가의 커뮤니케이션을 증진하고 있습니다.</font></td>
+	                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+	                        <td><a href = "https://coshaman.github.io/coshaman1/5.html" title="전국민 독서 권장 프로젝트 북소동" target = "_blank" class="hov-anim-box" ><img src="%EA%B7%B8%EB%A6%BC01.png" alt="" class="animated" width="400" height="100" alt = "전국민 독서 권장 프로젝트 북소동"></a></td>
+	                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+	                    </tr><!-- 두번째 줄 끝 -->
+            </table>
         </div>
         <div id="footer">
-            <div class="container">footer</div>
+            <div class="container">㈜KW</div>
         </div>
     </div>
 	
