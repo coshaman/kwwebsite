@@ -55,3 +55,11 @@
 }
 
 
+/* 게시판2 */
+.notice2 {position: relative; margin-top: 20px;}
+.notice2 h4 {font-size: 14px; color: #0093bd; padding-bottom: 3px; font-weight: 700;}
+.notice2 li {overflow: hidden; background: url(img/dot.gif) no-repeat 0 9px; padding-left: 10px;}
+.notice2 li a {float: left; width: 60%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; }
+.notice2 li span {float: right; width: 30%; text-align: right; font-size: 12px;}
+.notice2 a.more {position: absolute; right: 0; top: 0; display: block; background: url(img/icon.png) -150px -90px; width: 17px; height: 17px;}
+.notice2 a.more:hover {background-position: -167px -90px;}
